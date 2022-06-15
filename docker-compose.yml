@@ -1,0 +1,12 @@
+version: '3.7'
+
+services:
+  app:
+    build: ./flask
+    container_name: "py"
+    ports:
+      - 5000:5000
+    volumes:
+      - $PWD/src:/src
+    entrypoint: ["python", "/src/app.py"]
+    restart: always

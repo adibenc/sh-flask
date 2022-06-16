@@ -8,7 +8,7 @@ import pickle
 import numpy as np
 # import utils
 # import hit
-
+import keras
 
 startTime = datetime.datetime.now().strftime("%Y-%b-%d %H:%M:%S")
 
@@ -16,7 +16,11 @@ app = Flask(__name__)
 
 # model path
 mpath = "./dummy/tf-2022-0615-wisata.pckl"
-mo1 = pickle.load(open(mpath, "rb"))
+mpath = "./dummy/tf-2022-0615-wisata.pckl"
+# mo1 = pickle.load(open(mpath, "rb"))
+
+mo1 = keras.models.load_model("./dummy/tf-2022-0615-wisata.mdl")
+
 
 mainLabel = [
 {"no":1,"data":"0000000","lbl":"1000000000000000000","label_tag":"'1000000000000000000"},
